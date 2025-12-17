@@ -1,0 +1,498 @@
+:root {
+    --primary-color: #d67e34;
+    --secondary-color: #6d4c41;
+    --accent-color: #ffcc80;
+    --light-color: #fff8e1;
+    --dark-color: #5d4037;
+}
+
+body {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: var(--dark-color);
+    background-color: #fffef9;
+    padding-top: 80px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 700;
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--primary-color) !important;
+}
+
+.navbar-brand span {
+    color: var(--secondary-color);
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.navbar-brand .text-primary {
+    color: var(--primary-color) !important;
+}
+
+.section-title {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #d67e34;
+}
+
+.section-title.text-center::after {
+    left: 3%;
+    transform: translateX(-50%);
+}
+
+/* Унифицированные стили для карточек товаров */
+.product-card {
+    height: 100%;
+    border: 1px solid #e9ecef;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-color);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.product-card .card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.product-card .card-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-card .badge-custom {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 0.35em 0.65em;
+}
+
+.product-card .card-title {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0.5rem 0;
+    min-height: 3rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-card .card-text {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-card .price-tag {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.product-card .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    font-weight: 550;
+    padding: 0.5rem 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.product-card .btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.product-card .d-flex {
+    margin-top: auto;
+}
+
+/* Стили для индикатора корзины */
+.cart-indicator {
+    position: fixed;
+    right: 20px;
+    top: 90px;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-count {
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+/* Стили для модальных окон */
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+/* Стили для секции героя */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('../img/hleb.webp') center / cover no-repeat;
+    padding: 250px 0;
+    margin-top: -80px;
+    color: white;
+}
+
+/* Стили для преимуществ */
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Стили для футера */
+.footer {
+    background: var(--secondary-color);
+    color: white;
+    padding: 3rem 0;
+}
+
+.footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Кнопка "Наверх" */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Стили для карусели */
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Стили для рецептов */
+.recipe-card {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.recipe-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Стили для галереи */
+.gallery-img {
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s;
+    width: 100%;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+/* Стили для аккордеона */
+.accordion-button:not(.collapsed) {
+    background-color: rgba(214, 126, 52, 0.1);
+    color: var(--primary-color);
+}
+
+/* Стили для контактной формы */
+.contact-section {
+    background: linear-gradient(135deg, rgba(214, 126, 52, 0.05), rgba(255, 204, 128, 0.05));
+    padding: 4rem 0;
+}
+
+/* Стили для фильтров */
+.filter-btn {
+    margin: 5px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: white !important;
+}
+
+/* Стили для категорий в полном ассортименте */
+.category-title {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px dashed var(--primary-color);
+    font-size: 1.8rem;
+}
+
+/* Стили для полного ассортимента */
+.assortment-section {
+    background-color: #f9f5f0;
+}
+
+/* Анимации и улучшения UI */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Анимация для логотипа */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar-brand {
+    animation: fadeInDown 0.8s ease;
+}
+
+/* Кастомные алерты */
+.alert-fresh {
+    background-color: rgba(255, 204, 128, 0.2);
+    border: 1px solid var(--accent-color);
+    color: var(--dark-color);
+}
+
+/* Стили для quantity control */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* Кастомные кнопки */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 8px 25px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* О нас секция */
+.about-section {
+    background-color: var(--light-color);
+    padding: 80px 0;
+}
+
+/* Карусель контролы */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.carousel-indicators button {
+    background-color: var(--primary-color) !important;
+}
+
+/* Стили для модальных окон рецептов */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+.recipe-card {
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #6d4c41;
+    color: #ffcc80;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 80px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .gallery-img {
+        height: 150px;
+    }
+
+    .cart-indicator {
+        top: 70px;
+        right: 10px;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .product-card .card-img-top {
+        height: 180px;
+    }
+}
+
+/* Заглушки для отсутствующих изображений */
+.card-img-top:before {
+    content: "Изображение";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: #f0f0f0;
+    color: #666;
+    font-weight: bold;
+}
